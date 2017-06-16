@@ -2,7 +2,7 @@
   <div class="event-card inner-wrap">
     <div v-if="hasLabels" class="event-card-labels">
       <span v-if="event.is_official" class="event-card-label">
-        <i class="icon-star-full"></i> Official ACLU Event
+        <i class="icon-star-full"></i> Official Event
       </span>
       <span v-for="label in categoryLabels" class="event-card-label">
         {{label}}

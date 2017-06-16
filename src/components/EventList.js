@@ -38,6 +38,9 @@ export default function(store){
       noEventsText(){
         return "No events matched that search."
       },
+      eventsFilteredText(){
+        return "Some events are filtered."
+      },
       invalidZipcodeText() {
         return "Invalid zipcode."
       },

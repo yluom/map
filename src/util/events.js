@@ -17,12 +17,17 @@ export function computeFilteredEvents(events, filters, zipcodes) {
     return [];
   }
 
+  var hasFilterOnEventType = false;
+  var hasFilterOnEventDate = false;
+  var hasFilterOnEventZip = false;
+
+
   const filteredEvents = events.filter(event => {
 
     if (filters.eventType) {
+      hasFilterOnEventType = true;
       const eventCategories = event.categories ?
-        event.categories.split(',') :
-        [];
+        event.categories.split(',') : [];
 
       // The UI lumps into "event types" what are mostly "categories"
       // in ActionKit, with this one exception, the is_official
@@ -50,7 +55,8 @@ export function computeFilteredEvents(events, filters, zipcodes) {
     const localDatetime = moment(event.start_datetime);
 
     if (filters.startDate) {
-      const startDate = moment(filters.startDate, 'DD-MM-YYYY');
+      hasFilterOnEventDate = true;
+      const startDate = moment(filters.startDate, 'YYYY-MM-DD');
 
       if (localDatetime.isBefore(startDate, 'day')) {
         return false;
@@ -58,6 +64,8 @@ export function computeFilteredEvents(events, filters, zipcodes) {
     }
 
     if (filters.endDate) {
+      hasFilterOnEventDate = true;
+
       const endDate = moment(filters.endDate, 'YYYY-MM-DD');
 
       if (localDatetime.isAfter(endDate, 'day')) {
@@ -66,9 +74,10 @@ export function computeFilteredEvents(events, filters, zipcodes) {
     }
 
     if (filters.zipcode) {
+      hasFilterOnEventZip = true;
+
       const milesFromZipcode = distance(
-        zipcodes[filters.zipcode],
-        [event.lng, event.lat],
+        zipcodes[filters.zipcode], [event.lng, event.lat],
         'miles'
       );
 
@@ -84,7 +93,7 @@ export function computeFilteredEvents(events, filters, zipcodes) {
 
   // When a zipcode is selected, sort events by proximity to that zipcode.
   if (filters.zipcode) {
-
+    hasFilterOnEventZip = true;
     filteredEvents.sort((a, b) => {
       const distanceFromA = distance(zipcodes[filters.zipcode], [a.lng, a.lat]);
       const distanceFromB = distance(zipcodes[filters.zipcode], [b.lng, b.lat]);
@@ -92,6 +101,22 @@ export function computeFilteredEvents(events, filters, zipcodes) {
       return distanceFromA - distanceFromB;
     });
 
+  }
+
+  var warningText = document.getElementById("eventsAreFilteredText");
+  var nbFilteredEvents = events.length - filteredEvents.length;
+  if (nbFilteredEvents > 0) {
+    warningText.innerHTML = nbFilteredEvents + " events are filtered.";
+    warningText.style.visibility = "visible";
+
+  }
+  else {
+    warningText.style.visibility = "hidden";
+  }
+  if (hasFilterOnEventType) {
+    /* var eventTypeButton = document.getElementById("eventTypes");
+     eventTypeButton.set*/
+    // TODO :)
   }
 
   return filteredEvents;

@@ -1,29 +1,19 @@
 <div class="header" id="header">
   <div class="inner-wrap">
     <div class="branding">
-      <img class="logo" src="https://www.humanbeatbox.com/wp-content/uploads/2015/05/beatbox-620x420.jpeg" alt="logo" style="width: 50%; height: 50%"/>
-      <h2 class="cta" ref="cta">Beatbox Events WorldMap - Find beatbox events near you</h2>
+      <img class="logo" src="https://www.humanbeatbox.com/wp-content/uploads/2015/05/beatbox-620x420.jpeg" alt="logo" style="width: 50%; height: 50%" />
+      <h2 class="cta" ref="cta">Beatbox Events WorldMap - Find beatbox events near you !</h2>
     </div>
 
     <div class="toolbar">
       <div class="search-wrap">
-        <input
-          type="text"
-          :value="filters.zipcode"
-          placeholder="Search by zip code"
-          @input="search"
-          autofocus
-          maxlength="5"
-        />
+        <input type="text" :value="filters.zipcode" placeholder="Search by zip code" @input="search" autofocus maxlength="5" />
         <button type="button">
           <i class="icon-search"></i>
         </button>
       </div>
       <div class="button-group">
-        <button
-          type="button"
-          @click="toggleFilterEvents"
-        >
+        <button type="button" @click="toggleFilterEvents">
           Filter events
         </button>
 
@@ -32,13 +22,7 @@
         </button>
       </div>
 
-      <mobile-event-filters
-        :is-filter-events-open="isFilterEventsOpen"
-        :filter-events-top="filterEventsTop"
-        :toggle-filter-events="toggleFilterEvents"
-        :event-types="eventTypes"
-        :filters="filters"
-      >
+      <mobile-event-filters :is-filter-events-open="isFilterEventsOpen" :filter-events-top="filterEventsTop" :toggle-filter-events="toggleFilterEvents" :event-types="eventTypes" :filters="filters">
       </mobile-event-filters>
 
     </div>
@@ -46,39 +30,30 @@
     <div class="toolbar -desktop">
       <div class="toolbar-inner">
 
+
+
         <div class="toolbar-item">
-          <input
-            class="zipcode"
-            type="text"
-            :value="filters.zipcode"
-            placeholder="Search by zip code"
-            @input="search"
-            autofocus
-            maxlength="5"
-          />
+          <input class="zipcode" type="text" :value="filters.zipcode" placeholder="Search by address WIP ;)" @input="search" autofocus maxlength="5" />
         </div>
 
         <div class="toolbar-item">
           <button-dropdown button-text="Date of event">
-            <event-date-filters :filters="filters" ></event-date-filters>
+            <event-date-filters :filters="filters"></event-date-filters>
           </button-dropdown>
         </div>
 
-        <div class="toolbar-item">
+        <div class="toolbar-item" id="eventTypes">
           <button-dropdown button-text="Type of event">
-            <event-type-filters :event-types="eventTypes":filters="filters"></event-type-filters>
+            <event-type-filters :event-types="eventTypes" :filters="filters"></event-type-filters>
           </button-dropdown>
         </div>
 
         <div class="toolbar-item">
-          <a
-            class="btn"
-            href="https://go.peoplepower.org/signup/host_new?source=map"
-            target="_blank"
-          >
+          <a class="btn" href="#" target="_blank" onclick="alert('Map still in development, soon available :) !');">
             Host an event
           </a>
         </div>
+        <div class="toolbar-text" id="eventsAreFilteredText" style="visibility:hidden">0 events are filtered.!</div>
       </div>
     </div>
   </div>

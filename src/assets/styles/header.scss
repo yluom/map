@@ -67,8 +67,12 @@
 }
 
 @keyframes slideUp {
-  0% { top: 105vh; }
-  100% { top: 4.5em; }
+  0% {
+    top: 105vh;
+  }
+  100% {
+    top: 4.5em;
+  }
 }
 
 .filter-events {
@@ -95,7 +99,7 @@
 
 .filter-events-body {
   padding: 0 1em;
-  > * {
+  >* {
     margin-top: 1em;
   }
 }
@@ -133,21 +137,18 @@
 .filter-events-checkbox {
   display: block;
   cursor: pointer;
-
   &:hover span {
     background-color: $light-gray;
   }
-
   // Hide default checkbox, too hard to style
   input {
     visibility: hidden;
-    display:block;
-    height:0;
-    width:0;
-    position:absolute;
-    overflow:hidden;
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+    overflow: hidden;
   }
-
   // The fake checkbox to style
   span {
     display: inline-block;
@@ -161,9 +162,8 @@
     margin-right: 1em;
     font-weight: bold;
   }
-
   // Checked style
-  input:checked + span {
+  input:checked+span {
     background: $light-blue;
   }
 }
@@ -171,12 +171,10 @@
 .filter-events-date-picker {
   position: relative;
   width: 100%;
-
   .date-picker-header {
     display: flex;
     width: 100%;
     text-align: center;
-
     input {
       border: none;
       outline: none;
@@ -188,7 +186,6 @@
       padding-bottom: .3em;
       flex: 4;
       min-width: 6em;
-
       &:focus {
         border-color: $aclu-blue;
       }
@@ -242,23 +239,19 @@
   border: solid 1px $light-gray;
 }
 
-
 @media (min-width: $breakpoint-large) {
   .header {
     padding: 0;
   }
-
   .inner-wrap {
     width: auto;
     max-width: none;
     padding: 0;
   }
-
   .branding {
     padding: 1em;
     @include clearfix;
   }
-
   .filter-events-date-picker {
     .date-picker-header {
       input {
@@ -266,38 +259,31 @@
       }
     }
   }
-
   .logo,
   .cta {
     float: left;
     margin-right: 1em;
   }
-
   .cta {
     /* Because of the font this requires a teeny tweak*/
     position: relative;
     top: .12em;
   }
-
   .toolbar {
     display: none;
   }
-
   .toolbar.-desktop {
     display: block;
     background: $white;
     padding: $offset;
     border-bottom: solid 2px $light-gray;
   }
-
   .toolbar-inner {
     display: flex;
     justify-content: center;
   }
-
   .toolbar-item {
     margin: 0 ($offset / 2);
-
     .btn,
     .button-dropdown-button,
     .zipcode {
@@ -305,17 +291,20 @@
       line-height: 2.5rem;
       box-sizing: border-box;
     }
-
     .btn,
     .button-dropdown-button {
       padding: 0 2em;
     }
   }
-
   .toolbar {
     .zipcode {
       border: solid 1px $light-gray;
       font-size: .9em;
     }
+  }
+  .toolbar-text {
+    margin-left: 10px;
+    font-family: $accent-font;
+    font-size: 1.5em;
   }
 }
