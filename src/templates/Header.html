@@ -1,7 +1,7 @@
 <div class="header" id="header">
   <div class="inner-wrap">
     <div class="branding">
-      <img class="logo" src="https://www.humanbeatbox.com/wp-content/uploads/2015/05/beatbox-620x420.jpeg" alt="logo" style="width: 50%; height: 50%" />
+      <img class="logo" src="../assets/images/logo.png" alt="logo" style="width: 50%; height: 50%" />
       <h2 class="cta" ref="cta">Beatbox Events WorldMap - Find beatbox events near you !</h2>
     </div>
 
@@ -31,8 +31,8 @@
       <div class="toolbar-inner">
 
 
-
-        <div class="toolbar-item">
+        <!--TODO disabled zipcode here-->
+        <div class="toolbar-item" style="display: none;">
           <input class="zipcode" type="text" :value="filters.zipcode" placeholder="Search by address WIP ;)" @input="search" autofocus maxlength="5" />
         </div>
 
