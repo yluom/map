@@ -14,9 +14,9 @@ export default function(store){
     data: {
       mapRef: null,
       eventsLayer: null,
-      initialCoordinates: [-96.9, 37.8],
-      initialZoom: 3,
-      boundsOfContinentalUS: [[-124.848974, 24.396308], [-66.885444, 49.384358]],
+      initialCoordinates: [43.611154, 1.442662],
+      initialZoom: 5,
+      boundsOfContinentalUS: [[43.611154, 0.442662], [45.611154, 1.442662]],
     },
     computed: {
       events() {

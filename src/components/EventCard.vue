@@ -18,7 +18,7 @@
       {{event.venue}}
     </div>
     <div v-if="hasCapacity">
-      <a class="btn event-card-cta" :href="url" target="_blank">RSVP</a>
+      <a class="btn event-card-cta" :href="url" target="_blank">FB EVENT</a>
     </div>
   </div>
 </template>
@@ -52,7 +52,7 @@ export default {
         .filter(Boolean);
     },
     url() {
-      return `https://go.peoplepower.org/event/${this.event.campaign}/${this.event.id}`;
+      return `${this.event.url}`;
     }
   }
 }

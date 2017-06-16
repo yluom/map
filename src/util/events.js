@@ -50,7 +50,7 @@ export function computeFilteredEvents(events, filters, zipcodes) {
     const localDatetime = moment(event.start_datetime);
 
     if (filters.startDate) {
-      const startDate = moment(filters.startDate, 'YYYY-MM-DD');
+      const startDate = moment(filters.startDate, 'DD-MM-YYYY');
 
       if (localDatetime.isBefore(startDate, 'day')) {
         return false;
@@ -72,7 +72,7 @@ export function computeFilteredEvents(events, filters, zipcodes) {
         'miles'
       );
 
-      const MAX_MILES_FROM_ZIPCODE = 50;
+      const MAX_MILES_FROM_ZIPCODE = 100;
 
       if (milesFromZipcode > MAX_MILES_FROM_ZIPCODE) {
         return false;

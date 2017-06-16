@@ -30,14 +30,14 @@ const store = new Vuex.Store({
     // We initialize eventTypes just with our "virtual" event type,
     // and the rest are loaded from the server
     eventTypes: {
-      aclu: "Official ACLU Event"
+     // aclu: "Official ACLU Event"
     }
   },
   actions: {
     loadEvents({commit}){
       xhr({
         method: 'GET',
-        url: '//d3r5pbxngwkvri.cloudfront.net/action_events_v2.json',
+        url: '/events.json',
         json: true,
       }, (err, response) => {
         if (err) return;
@@ -47,7 +47,7 @@ const store = new Vuex.Store({
     loadZips({commit}){
       xhr({
         method: 'GET',
-        url: '/us_postal_codes.json',
+        url: '/src/data/fr_postal_codes.json',
         json: true,
       }, (err, response) => {
         if (err) return;

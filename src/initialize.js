@@ -11,7 +11,7 @@ import EventList from 'components/EventList';
 
 // Load events data
 store.dispatch('loadEvents')
-const ONE_MINUTE = 60000;
+const ONE_MINUTE = 60000*5; // we reload events every 5 minutes 
 
 // And then keep grabbing events data once per minute
 // the rate at which the data feed is regenerated.

@@ -1,0 +1,102 @@
+{
+  "events": [{
+    "city": "Toulouse",
+    "start_datetime": "2017-06-17T21:00:00",
+    "is_official": 0,
+    "zip": "31400",
+    "campaign": "action",
+    "title": "Underground beatbox battle #17",
+    "attendee_count": 0,
+    "max_attendees": 99999,
+    "venue": "Le père Peinard, 1 Rue des Chalets, 31000 Toulouse",
+    "state": "FR",
+    "lat": 43.611154,
+    "lng": 1.442662,
+    "starts_at_utc": "2017-06-17T21:00:00",
+    "id": 1,
+    "url": "https://www.facebook.com/events/109478326319991/",
+    "categories": "battle"
+  }, {
+    "city": "Toulouse",
+    "start_datetime": "2017-06-18T12:00:00",
+    "is_official": 0,
+    "zip": "31400",
+    "campaign": "action",
+    "title": "Performance street by Coriolis",
+    "attendee_count": 0,
+    "max_attendees": 99999,
+    "venue": "Place du capitole, 31000 Toulouse",
+    "state": "FR",
+    "lat": 43.604459, 
+    "lng": 1.443461,
+    "starts_at_utc": "2017-06-18T12:00:00",
+    "id": 2,
+    "url": "https://www.facebook.com/events/109478326319991/",
+    "categories": "streetperforming"
+  }, {
+    "city": "Krakow",
+    "start_datetime": "2017-08-06T21:00:00",
+    "is_official": 0,
+    "zip": "0",
+    "campaign": "action",
+    "title": "Beatbox World Camp 2017",
+    "attendee_count": 0,
+    "max_attendees": 99999,
+    "venue": "KRAKOW, POLAND",
+    "state": "PL",
+    "lat": 50.059971, 
+    "lng": 19.961270,
+    "starts_at_utc": "2017-08-06T21:00:00",
+    "id": 3,
+    "url": "http://www.swissbeatbox.com/world-beatbox-camp-2017/",
+    "categories": "lessons"
+  }, {
+    "city": "Toulouse",
+    "start_datetime": "2017-06-17T21:00:00",
+    "is_official": 0,
+    "zip": "31400",
+    "campaign": "action",
+    "title": "Underground beatbox battle #18",
+    "attendee_count": 0,
+    "max_attendees": 99999,
+    "venue": "Le père Peinard, 1 Rue des Chalets, 31000 Toulouse",
+    "state": "FR",
+    "lat": 43.611155,
+    "lng": 1.442662,
+    "starts_at_utc": "2017-06-17T22:00:00",
+    "id": 4,
+    "url": "https://www.facebook.com/events/109478326319991/",
+    "categories": "battle"
+  }, {
+    "city": "Flourens",
+    "start_datetime": "2017-06-24T19:00:00",
+    "is_official": 1,
+    "zip": "31000",
+    "campaign": "action",
+    "title": "Concert de berywam à Flourens",
+    "attendee_count": 0,
+    "max_attendees": 99999,
+    "venue": "Flourens",
+    "state": "FR",
+    "lat":  43.595015, 
+    "lng": 1.558841,
+    "starts_at_utc":  "2017-06-24T19:00:00",
+    "id": 5,
+    "url": "https://www.facebook.com/berywam/",
+    "categories": "concert"
+  }],
+  "categories": {
+    "battle": {
+      "label": "Battle"
+    },
+    "concert": {
+      "label": "Concert"
+    },
+    "streetperforming": {
+      "label": "Street Performing"
+    },
+    "lessons": {
+      "label": "Lessons"
+    }
+  }
+}
